@@ -31,6 +31,3 @@ if client_socket:
 		except:
 			print('VIDEO FINISHED!')
 			break
-
-  git config --global user.email "syedibrahim-javarndcorp@gmail.com"
-  git config --global user.name "Your Name"
