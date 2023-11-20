@@ -16,7 +16,7 @@ print("Listening at",socket_address)
 
 def show_client(addr,client_socket):
 	try:
-		print('CLIENT {} CONNECTED!'.format(addr))
+		print(f'Client {addr} connected')
 		if client_socket: # if a client socket exists
 			data = b""
 			payload_size = struct.calcsize("Q")
@@ -42,14 +42,14 @@ def show_client(addr,client_socket):
 					break
 			client_socket.close()
 	except Exception as e:
-		print(f"CLINET {addr} DISCONNECTED")
+		print(f"Client {addr} Disconnected")
 		pass
 		
 while True:
 	client_socket,addr = server_socket.accept()
 	thread = threading.Thread(target=show_client, args=(addr,client_socket))
 	thread.start()
-	print("TOTAL CLIENTS ",threading.activeCount() - 1)
+	print("Total Clients ",threading.activeCount() - 1)
 	
 				
 
